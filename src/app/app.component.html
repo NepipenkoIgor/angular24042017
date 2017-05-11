@@ -1,3 +1,11 @@
-<h1>
+<course-header>
+  <img [src]="logo" [alt]="title" [style.width.px]="width">
   {{title}}
-</h1>
+  <div class="right-side">
+    <course-search [placeholder]="placeholder"
+      (onSearch)="onSearch($event)"></course-search>
+  </div>
+</course-header>
+
+{{searchTerm}}
+
