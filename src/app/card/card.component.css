@@ -1,0 +1,34 @@
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.name, .position, .price {
+  line-height: 45px;
+  margin: 0 20px;
+}
+
+.price {
+  cursor: pointer;
+}
+
+.background {
+  background-color: ghostwhite;
+}
+
+.tooltip-container .tooltip {
+  position: absolute;
+  top: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  line-height: 20px;
+  display: none;
+  margin: 10px 0;
+  padding: 0 5px;
+}
+
+.tooltip-container .tooltip.tooltip-active {
+  display: block;
+}

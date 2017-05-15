@@ -1,0 +1,15 @@
+<md-card class="example-card" [ngClass]="{background:isOdd}">
+  <md-card-header>
+    <div class="position">{{position}}.</div>
+    <img class="avatar" [src]="product?.picture" [alt]="product?.title">
+    <div class="name">
+      {{product?.title}}
+    </div>
+    <div class="price"
+    (mouseenter)="t.show()"
+    (mouseleave)="t.hide()">
+      {{product?.price | currency:'USD':true:'1.0-0' }}
+    </div>
+    <div [courseTooltip]="product?.price" #t="tooltip"></div>
+  </md-card-header>
+</md-card>

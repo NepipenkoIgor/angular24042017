@@ -13,7 +13,8 @@ export class SearchComponent implements OnInit {
   @Output()
   public onSearch: EventEmitter<string> = new EventEmitter();
 
-  public constructor() { }
+  public constructor() {
+  }
 
   public ngOnInit(): void {
   }
