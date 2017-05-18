@@ -1,24 +1,33 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { products$ } from './data';
 import { Observable } from 'rxjs/Observable';
+import { ProductsService } from './common/services/products.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public title: string = 'ng-course';
   public placeholder: string = 'search term';
   public width: number = 50;
   public searchTerm: string;
   public logo: string = 'assets/images/logo.png';
 
-  public products$: Observable<Product[]> = products$;
+  public products$: Observable<Product[]>;
 
-  public constructor() {
+  public constructor(
+    private _productsService: ProductsService
+  ) {
+  }
+
+  public ngOnInit(): void {
+    this.products$ = this._productsService.getProducts();
   }
 
   public onSearch(value: string): void {
     this.searchTerm = value;
   }
+
+  // TODO Add modal open method
 }
