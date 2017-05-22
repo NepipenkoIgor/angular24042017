@@ -33,7 +33,8 @@ export class ModalComponent implements OnInit {
         this.isOpen = true;
         this.childComponent = this._componentFactoryResolver.resolveComponentFactory(componentObj.component);
         this.modalContext = this.modal.createComponent(this.childComponent);
-        // TODO add context
+        Object.keys(componentObj.context)
+          .forEach((key: string) => this.modalContext.instance[key] = componentObj.context[key]);
       });
   }
 

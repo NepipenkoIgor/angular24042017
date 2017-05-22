@@ -4,12 +4,13 @@
   <div class="right-side">
     <course-search [placeholder]="placeholder"
       (onSearch)="onSearch($event)"></course-search>
+    <course-cart></course-cart>
   </div>
 </course-header>
 
 <div *ngIf="products$ | async as products ; else loadGif">
   <div *ngFor="let product of products | productsFilter:searchTerm; index as i; odd as isOdd">
-    <course-card [product]="product" [position]="i+1" [isOdd]="isOdd">
+    <course-card [product]="product" [position]="i+1" [isOdd]="isOdd" (click)="openCard(product)">
     </course-card>
   </div>
 </div>
@@ -19,3 +20,4 @@
   </div>
 </ng-template>
 
+<course-modal></course-modal>

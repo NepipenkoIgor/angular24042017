@@ -15,6 +15,9 @@ import { DOMAIN, DOMAIN_TOKEN } from '../config';
 import { HttpService } from './common/services/http.service';
 import { ModalComponent } from './common/components/modal/modal.component';
 import { ModalService } from './common/components/modal/modal.service';
+import { FullCardComponent } from './card/full-card/full-card.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './common/services/cart.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { ModalService } from './common/components/modal/modal.service';
     CardComponent,
     TooltipDirective,
     ProductsFilterPipe,
-    ModalComponent
+    ModalComponent,
+    FullCardComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -43,11 +48,13 @@ import { ModalService } from './common/components/modal/modal.service';
     ModalService,
     HttpService,
     BaseRequestOptions,
+    CartService,
     {
       provide: 'DOMAIN',
       useValue: 'http://somestring'
     }
   ],
+  entryComponents: [FullCardComponent],
   bootstrap: [AppComponent]
   // TODO Full-card add to factory arr
 })

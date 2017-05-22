@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { products$ } from './data';
 import { Observable } from 'rxjs/Observable';
 import { ProductsService } from './common/services/products.service';
+import { ModalService } from './common/components/modal/modal.service';
+import { FullCardComponent } from './card/full-card/full-card.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,7 +19,8 @@ export class AppComponent implements OnInit {
   public products$: Observable<Product[]>;
 
   public constructor(
-    private _productsService: ProductsService
+    private _productsService: ProductsService,
+    private _modalService: ModalService,
   ) {
   }
 
@@ -30,4 +33,13 @@ export class AppComponent implements OnInit {
   }
 
   // TODO Add modal open method
+
+  public openCard(product: Product): void {
+    this._modalService.open({
+      component: FullCardComponent,
+      context: {
+        product
+      }
+    });
+  }
 }

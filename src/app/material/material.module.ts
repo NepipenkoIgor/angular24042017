@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdCardModule, MdInputModule, MdToolbarModule } from '@angular/material';
+import { MdButtonModule, MdCardModule, MdInputModule, MdToolbarModule } from '@angular/material';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   imports: [
@@ -8,9 +8,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MdToolbarModule,
     MdInputModule,
     MdCardModule,
+    MdButtonModule,
     NoopAnimationsModule
   ],
-  exports: [MdToolbarModule, MdCardModule, MdInputModule, NoopAnimationsModule],
+  exports: [MdButtonModule, MdToolbarModule, MdCardModule, MdInputModule, NoopAnimationsModule],
   declarations: []
 })
 export class MaterialModule {

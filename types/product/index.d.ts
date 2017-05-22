@@ -4,3 +4,8 @@ type Product = {
   'picture': string,
   'title': string
 };
+
+type CartItem = {
+  product: Product,
+  action: 'add' | 'remove'
+};
