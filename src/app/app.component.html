@@ -1,6 +1,7 @@
 <course-header>
   <img [src]="logo" [alt]="title" [style.width.px]="width">
   {{title}}
+  <course-menu></course-menu>
   <div class="right-side">
     <course-search [placeholder]="placeholder"
       (onSearch)="onSearch($event)"></course-search>
@@ -8,16 +9,6 @@
   </div>
 </course-header>
 
-<div *ngIf="products$ | async as products ; else loadGif">
-  <div *ngFor="let product of products | productsFilter:searchTerm; index as i; odd as isOdd">
-    <course-card [product]="product" [position]="i+1" [isOdd]="isOdd" (click)="openCard(product)">
-    </course-card>
-  </div>
-</div>
-<ng-template #loadGif>
-  <div class="loadBlock">
-    <img src="assets/images/gears.gif" alt="">
-  </div>
-</ng-template>
+<router-outlet></router-outlet>
 
 <course-modal></course-modal>

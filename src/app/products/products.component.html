@@ -1,0 +1,11 @@
+<div *ngIf="products$ | async as products ; else loadGif">
+  <div *ngFor="let product of products | productsFilter:searchTerm; index as i; odd as isOdd">
+    <course-card [product]="product" [position]="i+1" [isOdd]="isOdd" (click)="openCard(product)">
+    </course-card>
+  </div>
+</div>
+<ng-template #loadGif>
+  <div class="loadBlock">
+    <img src="assets/images/gears.gif" alt="">
+  </div>
+</ng-template>
