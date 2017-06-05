@@ -12,7 +12,7 @@ export class ModalService {
   }
 
   public close(): void {
-    this._modalSequence$$.next(null)
+    this._modalSequence$$.next(null);
   }
 
   public get modalSequence$(): Observable<any> {

@@ -22,12 +22,9 @@ export class ProductResolverService implements Resolve<Product> {
   ) { }
 
   public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Product> {
-    return this._http.get(`${this._domain}/products/${route.params.id}`)
-      .map((res: Response) => res.json())
-      .catch((err: Error) => {
-        this._router.navigate(['products']);
-        return Observable.of(null);
-      });
+    return this._http.get(`${this._domain}/products/${route.params.id}`, {
+      'Content-Type': 'application/json'
+    });
   }
 
 }

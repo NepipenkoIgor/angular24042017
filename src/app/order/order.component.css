@@ -1,0 +1,9 @@
+input.ng-invalid {
+  color: red;
+}
+input.ng-pending {
+  color: orange;
+}
+div.ng-pending{
+  border-bottom: 1px solid orange;
+}

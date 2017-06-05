@@ -4,7 +4,6 @@ import {
   MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdMenuModule,
   MdToolbarModule
 } from '@angular/material';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   imports: [
     CommonModule,
@@ -12,8 +11,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MdInputModule,
     MdCardModule,
     MdButtonModule,
-    MdIconModule, MdMenuModule,
-    NoopAnimationsModule
+    MdIconModule, MdMenuModule
   ],
   exports: [
     MdIconModule,
@@ -21,8 +19,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MdButtonModule,
     MdToolbarModule,
     MdCardModule,
-    MdInputModule,
-    NoopAnimationsModule
+    MdInputModule
   ],
   declarations: []
 })

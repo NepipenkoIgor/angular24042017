@@ -1,0 +1,69 @@
+<!--<md-input-container>-->
+<!--&lt;!&ndash;formControl&ndash;&gt;-->
+<!--<input mdInput ngModel #c="ngModel" required minlength="4" >-->
+<!--</md-input-container>-->
+<!--{{c.valueChanges | async}}-->
+<!--{{c.valid }}-->
+<form class="example-form" #f="ngForm" (ngSubmit)="submit(f.value)">
+  <div>Username</div>
+  <md-input-container class="example-full-width">
+    <input mdInput name="firstName" ngModel  required minlength="4" nameValidator >
+  </md-input-container>
+  <div ngModelGroup="passwordGroup" asyncequal>
+    <div>Password</div>
+    <md-input-container class="example-full-width">
+      <input mdInput type="password" name="password" ngModel required minlength="4">
+    </md-input-container>
+    <div>Confirm password</div>
+    <md-input-container class="example-full-width">
+      <input mdInput type="password" name="pconfirm" ngModel required minlength="4">
+    </md-input-container>
+  </div>
+  <button md-raised-button type="submit" [disabled]="f.invalid">Submit</button>
+</form>
+{{f.value | json}}
+{{f.valid }}
+
+<hr>
+
+<form class="example-form" [formGroup]="formModel" (ngSubmit)="submit(formModel.value)">
+  <div>Username</div>
+  <md-input-container class="example-full-width">
+    <input mdInput formControlName="firstName">
+  </md-input-container>
+  <div formGroupName="passwordGroup">
+    <div>Password</div>
+    <md-input-container class="example-full-width">
+      <input mdInput type="password" formControlName="password" >
+    </md-input-container>
+    <div>Confirm password</div>
+    <md-input-container class="example-full-width">
+      <input mdInput type="password" formControlName="pconfirm" >
+    </md-input-container>
+  </div>
+  <button md-raised-button type="submit" [disabled]="formModel.invalid">Submit</button>
+</form>
+
+
+{{formModel.value | json}}
+{{formModel.valid }}
+
+<!--<md-input-container>-->
+<!--&lt;!&ndash;formControl&ndash;&gt;-->
+<!--<input mdInput [formControl]="name" >-->
+<!--</md-input-container>-->
+<!--{{name.valueChanges | async}}-->
+<!--{{name.valid }}-->
+
+<!--<form ngNoForm></form>-->
+
+<hr>
+
+<form [formGroup]="formArrayModel">
+  <ul formGroupName="emails">
+    <li *ngFor="let e of formArrayModel.get('emails').controls; index as i">
+      <input type="text" formControlName={{i}}>
+    </li>
+  </ul>
+  <button md-raised-button  (click)="addEmail()">Submit</button>
+</form>

@@ -24,6 +24,6 @@ export class FullCardComponent {
   }
 
   public goToProduct(product: Product): void {
-    this._router.navigate(['products', product._id])
+    this._router.navigate(['products', product._id]);
   }
 }

@@ -10,7 +10,7 @@
       <div class="remove" (click)="remove({product:product,action:'remove'})">x</div>
     </md-card-header>
   </md-card>
-  <button md-button>Make order</button>
+  <button md-button [routerLink]="['order']">Make order</button>
   <div class="total-sum">
     {{getTotalSum(products)}}
   </div>
