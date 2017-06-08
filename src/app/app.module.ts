@@ -21,6 +21,7 @@ import { routes } from './routes';
 import { MenuComponent } from './menu/menu.component';
 
 import { CustomPreloadStrategy } from './preload-strategy';
+import { SearchService } from './search/search.service';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { CustomPreloadStrategy } from './preload-strategy';
     {
       provide: 'DOMAIN',
       useValue: 'http://somestring'
-    }
+    },
+    SearchService
   ],
   entryComponents: [FullCardComponent, CartListComponent],
   bootstrap: [AppComponent]

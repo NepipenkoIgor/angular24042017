@@ -6,10 +6,10 @@
   </md-card-header>
   <img md-card-image [src]="product.picture">
   <md-card-actions>
-    <button md-button
+    <button md-button class="buy_button"
       (click)="buy({product:product, action:'add'})">BUY
     </button>
-    <button md-button
+    <button md-button class="info_button"
       (click) = " goToProduct(product)">More Info
     </button>
   </md-card-actions>
