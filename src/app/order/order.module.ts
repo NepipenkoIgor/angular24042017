@@ -10,6 +10,7 @@ import { FormControl, FormGroup, NG_ASYNC_VALIDATORS, NG_VALIDATORS } from '@ang
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
+import { SwitcherComponent } from './switcher/switcher.component';
 
 
 function nameValidator(control: FormControl): { [key: string]: boolean } {
@@ -69,7 +70,8 @@ export class AsyncEqualValidator {
   providers: [OrderGuardService],
   declarations: [
     OrderComponent, AsyncEqualValidator,
-    NameValidator
+    NameValidator,
+    SwitcherComponent
   ]
 })
 export class OrderModule {

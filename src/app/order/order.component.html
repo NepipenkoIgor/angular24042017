@@ -41,6 +41,10 @@
       <input mdInput type="password" formControlName="pconfirm" >
     </md-input-container>
   </div>
+  <div>
+    <course-switcher  formControlName="male" ></course-switcher>
+  </div>
+
   <button md-raised-button type="submit" [disabled]="formModel.invalid">Submit</button>
 </form>
 

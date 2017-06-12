@@ -23,6 +23,7 @@ export class OrderComponent implements OnInit {
   public ngOnInit(): void {
     this.formModel = this._fb.group({
       firstName: ['Ola', [Validators.required, Validators.minLength(4), this.nameValidator]],
+      male: [false],
       passwordGroup: this._fb.group({
         password: ['', [Validators.required, Validators.minLength(4)]],
         pconfirm: ['', [Validators.required, Validators.minLength(4)]]

@@ -22,6 +22,10 @@ import { MenuComponent } from './menu/menu.component';
 
 import { CustomPreloadStrategy } from './preload-strategy';
 import { SearchService } from './search/search.service';
+import { CdComponent } from './cd/cd.component';
+import { DefaultComponent } from './cd/default/default.component';
+import { OnPushComponent } from './cd/on-push/on-push.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,13 +37,17 @@ import { SearchService } from './search/search.service';
     FullCardComponent,
     CartComponent,
     CartListComponent,
-    MenuComponent
+    MenuComponent,
+    CdComponent,
+    DefaultComponent,
+    OnPushComponent
   ],
   imports: [
     BrowserModule,
     MaterialModule,
     NoopAnimationsModule,
     HttpModule,
+    FormsModule,
     RouterModule.forRoot(routes, { preloadingStrategy: CustomPreloadStrategy })
   ],
   providers: [

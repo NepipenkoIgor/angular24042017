@@ -4,6 +4,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductResolverService } from './product/product-resolver.service';
 import { OrderComponent } from './order/order.component';
 import { OrderGuardService } from './order/order-guard.service';
+import { CdComponent } from './cd/cd.component';
 
 export const routes: Route[] = [
   {
@@ -22,6 +23,10 @@ export const routes: Route[] = [
   {
     path: 'order',
     loadChildren: 'app/order/order.module#OrderModule'
+  },
+  {
+    path: 'cd',
+    component: CdComponent
   },
   {
     path: '**',
